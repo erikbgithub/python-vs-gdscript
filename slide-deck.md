@@ -11,6 +11,14 @@ class: lead-invert
 
 ---
 
+ * https://stackoverflow.com/questions/3295938/else-clause-on-python-while-statement
+ * sets
+ * types
+ * func vs def (minor terms)
+ * math is slightly different (division)
+
+---
+
 # Simple Example
 ## Python
 
