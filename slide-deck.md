@@ -19,6 +19,15 @@ class: lead-invert
 
 ---
 
+ * GDScript is better integrated with graphical elements
+ * Signals as event system
+ * Files are automatically extensions of a baseclass, based on the nod graph
+ * some functions like `random` are implemented slightly differently
+ * no `with` statements
+ * the file-local class doesn't need to be named, but then cannot be called by name in other files.
+
+---
+
 # Simple Example
 ## Python
 
