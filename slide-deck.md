@@ -16,6 +16,7 @@ class: lead-invert
  * types
  * func vs def (minor terms)
  * math is slightly different (division)
+ * `get_type()` and `typeof()` and `get_class()` and groups
 
 ---
 
