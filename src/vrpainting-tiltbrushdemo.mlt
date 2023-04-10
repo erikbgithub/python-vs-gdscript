@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="no"?>
+<mlt LC_NUMERIC="C" version="7.13.0" title="Shotcut version 22.12.21" producer="main_bin">
+  <profile description="automatic" width="424" height="240" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="53" display_aspect_den="30" frame_rate_num="30" frame_rate_den="1" colorspace="709"/>
+  <playlist id="main_bin">
+    <property name="xml_retain">1</property>
+  </playlist>
+  <producer id="black" in="00:00:00.000" out="00:00:11.067">
+    <property name="length">00:00:11.100</property>
+    <property name="eof">pause</property>
+    <property name="resource">0</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgba</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00.000" out="00:00:11.067"/>
+  </playlist>
+  <chain id="chain0" out="00:01:47.467">
+    <property name="length">00:01:47.500</property>
+    <property name="eof">pause</property>
+    <property name="resource">./ytcut-tiltbrushdemo.mkv</property>
+    <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">8938de045a70dfd0d5db4917b5d8b5be</property>
+    <property name="shotcut:defaultAudioIndex">-1</property>
+    <property name="shotcut:caption">2023-04-10 16-05-58.mkv</property>
+    <property name="shotcut:producer">avformat</property>
+    <property name="xml">was here</property>
+    <filter id="filter0" in="00:00:20.333" out="00:00:26.833">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-21.882 -17 464.633 263 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <chain id="chain1" out="00:01:47.467">
+    <property name="length">00:01:47.500</property>
+    <property name="eof">pause</property>
+    <property name="resource">./ytcut-tiltbrushdemo.mkv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-04-10T14:07:46</property>
+    <property name="shotcut:hash">8938de045a70dfd0d5db4917b5d8b5be</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">2023-04-10 16-05-58.mkv</property>
+    <property name="xml">was here</property>
+    <filter id="filter1" in="00:00:58.600" out="00:01:03.167">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-22 -17 464.633 263 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <tractor id="tractor0" in="00:00:00.000" out="00:00:00.000">
+    <property name="shotcut:transition">lumaMix</property>
+    <track producer="chain0" in="00:00:26.833" out="00:00:26.833"/>
+    <track producer="chain1" in="00:00:58.600" out="00:00:58.600"/>
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+  </tractor>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <entry producer="chain0" in="00:00:20.333" out="00:00:26.800"/>
+    <entry producer="tractor0" in="00:00:00.000" out="00:00:00.000"/>
+    <entry producer="chain1" in="00:00:58.633" out="00:01:03.167"/>
+  </playlist>
+  <tractor id="tractor1" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:11.067">
+    <property name="shotcut">1</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <track producer="background"/>
+    <track producer="playlist0" hide="audio"/>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">1</property>
+    </transition>
+  </tractor>
+</mlt>
